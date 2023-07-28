@@ -1,3 +1,5 @@
+This is Just how I am praticing React by learning about all its functionality using a pratical approach.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
