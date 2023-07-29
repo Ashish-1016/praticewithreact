@@ -7,17 +7,17 @@ import ReduxPage from './components/ReduxPage';
 function App() {
 
 
-  const [number, setNumber] = useState(10)
+  // const [number, setNumber] = useState(10)
 
-  function handlePagination() {
-    setNumber(number + 10)
-    const slicedTodos = todos.slice(10, number)
-    setTodos(slicedTodos)
-  }
+  // function handlePagination() {
+  //   setNumber(number + 10)
+  //   const slicedTodos = todos.slice(10, number)
+  //   setTodos(slicedTodos)
+  // }
 
 
 
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -37,8 +37,8 @@ function App() {
   //   fetchData();
   // }, [todos]);
 
-  const [searchTerm, setSearchTerm] = useState("")
-  const [range, setRange] = useState(8)
+  // const [searchTerm, setSearchTerm] = useState("")
+  // const [range, setRange] = useState(8)
 
   return (
     <div className="App">
