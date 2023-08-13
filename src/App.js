@@ -38,27 +38,8 @@ function App() {
   //   fetchData();
   // }, [todos]);
 
-  // const [searchTerm, setSearchTerm] = useState("")
-  // const [range, setRange] = useState(8)
-  const [percent, setPercent] = useState('50')
-  const [display, setDisplay] = useState(0)
-
-  useEffect(() => {
-
-    if (percent < 0) {
-      setPercent('0')
-    }
-    if (percent > 100) {
-      setPercent('100')
-    }
-
-    setInterval(() => {
-      for(let i=0;i<=percent;i++){
-        setDisplay(i+1)
-      }
-    }, 50)
-
-  }, [percent])
+  const [searchTerm, setSearchTerm] = useState("")
+  const [range, setRange] = useState(8)
 
   return (
     <div className="App">
