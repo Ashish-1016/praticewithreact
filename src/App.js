@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import ReduxPage from './components/ReduxPage';
+import ProgressBar from './components/ProgressBar'
 
 
 
 function App() {
 
 
-  const [number, setNumber] = useState(10)
+  // const [number, setNumber] = useState(10)
 
-  function handlePagination() {
-    setNumber(number + 10)
-    const slicedTodos = todos.slice(10, number)
-    setTodos(slicedTodos)
-  }
+  // function handlePagination() {
+  //   setNumber(number + 10)
+  //   const slicedTodos = todos.slice(10, number)
+  //   setTodos(slicedTodos)
+  // }
 
 
 
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -37,8 +38,27 @@ function App() {
   //   fetchData();
   // }, [todos]);
 
-  const [searchTerm, setSearchTerm] = useState("")
-  const [range, setRange] = useState(8)
+  // const [searchTerm, setSearchTerm] = useState("")
+  // const [range, setRange] = useState(8)
+  const [percent, setPercent] = useState('50')
+  const [display, setDisplay] = useState(0)
+
+  useEffect(() => {
+
+    if (percent < 0) {
+      setPercent('0')
+    }
+    if (percent > 100) {
+      setPercent('100')
+    }
+
+    setInterval(() => {
+      for(let i=0;i<=percent;i++){
+        setDisplay(i+1)
+      }
+    }, 50)
+
+  }, [percent])
 
   return (
     <div className="App">
@@ -101,12 +121,16 @@ function App() {
       })} */}
 
 
-        {/* How to use Slider/Range HTMLElement */}
+      {/* How to use Slider/Range HTMLElement */}
       {/* <input type='range' onChange={(e) => setRange(e.target.value)} min='8' max='1000' />
       <h1>{range}</h1>
       <button>Hello</button> */}
 
-      <ReduxPage />
+      {/* <ReduxPage /> */}
+      <div className='flex items-center m-4 rounded-xl border border-black'>
+        <ProgressBar percent={percent} />
+        <p className='absolute ml-[46.5%] text-black font-semibold'>{display}%</p>
+      </div>
 
 
 
